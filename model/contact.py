@@ -3,15 +3,15 @@
 """
 
 class Contact(object):
-    def __init__(self, name, hpnum, email, addr):
+    def __init__(self, name, hpnum, email, age):
         self.name = name
         self.hpnum = hpnum
         self.email = email
-        self.addr = addr
+        self.age = age
 
     def to_string(self):
         return self.name + ";" + self.hpnum + ";" \
-               + self.email + ";" + self.addr
+               + self.email + ";" + str(self.age)
 
 
 if __name__ == "__main__":

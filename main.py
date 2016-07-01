@@ -2,12 +2,20 @@
 main executable module
 """
 from model.contact import Contact
-import service.contact_service as svc
+import service.contact_service_db as svc
 
 import sqlite3
 
 def main():
 
+    contact = Contact('han','011-3456-2222','han@daum.net', 25)
+    svc.regist_contact(contact)
+    #print('등록 완료')
+
+    a_list = svc.search_contact('han')
+    print(a_list)
+
+    """
     create_table_query = \
         'create table contact (name text, hpnum text, email text, age int);'
     insert_query = "insert into contact values(?,?,?,?)"
@@ -25,6 +33,7 @@ def main():
     con.commit()
     #5. release resource
     con.close()
+    """
 
 
 
